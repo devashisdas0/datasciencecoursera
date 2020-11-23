@@ -1,0 +1,30 @@
+---
+title: "Leaflet_Mapping"
+author: "Dev Das"
+date: "November 23, 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# 11/23/20
+
+
+```{r packages, echo=FALSE}
+library(leaflet)
+library(widgetframe)
+```
+
+### Map of NYC Famous Buildings
+Click on Markers to see the name of the buildings
+```{r pressure, echo=FALSE}
+
+points <- data.frame("Longitude" = c(-73.9857, -73.9755, -73.9897, -74.0134), "Latitude" = c(40.7484, 40.7516, 40.7411, 40.7127), "Building" = c("Empire State Building", "Chrysler Building", "Flat Iron Building", "World Trade Center"))
+m <- leaflet(data = points) %>%
+  addTiles() %>%
+addMarkers(popup = ~Building)
+m
+```
+
