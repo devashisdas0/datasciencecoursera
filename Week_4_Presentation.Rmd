@@ -1,0 +1,41 @@
+---
+title: "Plant Histogram Presentation"
+author: "Dev Das"
+date: "November 25, 2020"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Agenda
+This presentation will focus on the following  
+
+- Plant Summary Data
+- Plant Plot
+- Some Conclusions
+
+## Summary of Plant Growth Dataset
+
+The plant growth dataset is separated into two columns. The first is a column of plant weights, while the second is the group that the plants are assigned to. The summary of the data below, shows the plant weights have a range of 2.72
+```{r cars, echo = TRUE}
+summary(PlantGrowth)
+```
+
+## Plot of Plant Weights
+
+The histogram of plant weights is below, with a median of 5.155
+
+```{r pressure}
+x    <- PlantGrowth$weight
+
+
+hist(x, col = "#228B22", border = "yellow",
+     xlab = "Plant Weight",
+     main = "Histogram of Plant Weights")
+```
+
+## Conclusions
+
+We can conclude from our small summary data and plot, that the plant data is skewed to the left, with some plants being under 4 inches. The data is centered around the median of 5.155, with a max of 6.31 and a min of 3.59. With more data points the distribution could turn normal with the help of the central limit theorem
